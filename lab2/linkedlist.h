@@ -3,6 +3,8 @@
 
 #include <ostream>
 
+using namespace std;
+
 class LinkedList
 {
 public:
@@ -13,10 +15,16 @@ public:
 	bool find(char ch);
 	bool del(char ch);
 
-	friend std::ostream& operator<<(std::ostream& out, const LinkedList& list);
+	friend ostream& operator<<(ostream& out, const LinkedList& list);
 
 private:
 	//fill in your code here
+	struct Node
+	{
+		char data;
+		Node * next;
+	};
+	Node * head;
 };
 
 #endif // _LINKED_LIST_
