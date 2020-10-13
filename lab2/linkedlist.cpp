@@ -7,19 +7,43 @@ LinkedList::LinkedList()
 	head = nullptr;
 }
 
-void add(char ch)
+void LinkedList::add(char ch)
 {
+	Node * newNode = new Node();
+	newNode->data = ch;
+	newNode->next = head;
+	head = newNode;
 
 }
 
-bool find(char ch)
+bool LinkedList::find(char ch)
 {
-
+	Node * curr = head;
+	while(curr != nullptr)
+	{
+		if(curr->data == ch)
+		{
+			return true;
+		}
+		curr = curr->next;
+	}
+	return false;
 }
 
-bool del(char ch)
+bool LinkedList::del(char ch)
 {
-
+	Node * curr = head;
+	while(curr != nullptr)
+	{
+		if(curr->data == ch)
+		{
+			Node * temp = curr;
+			curr = curr->next;
+			delete temp;
+			return true;
+		}
+	}
+	return false;
 }
 
 ostream& operator<< (ostream& out, const LinkedList& list)
