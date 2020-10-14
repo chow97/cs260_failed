@@ -7,13 +7,24 @@ LinkedList::LinkedList()
 	head = nullptr;
 }
 
+LinkedList::~LinkedList()
+{
+	Node * curr = head;
+	while(curr)
+	{
+		head = curr->next;
+		delete curr;
+		curr = head;
+	}
+}
+
 void LinkedList::add(char ch)
 {
 	Node * newNode = new Node();
 	newNode->data = ch;
 	newNode->next = head;
 	head = newNode;
-
+	
 }
 
 bool LinkedList::find(char ch)
@@ -33,15 +44,16 @@ bool LinkedList::find(char ch)
 bool LinkedList::del(char ch)
 {
 	Node * curr = head;
-	while(curr != nullptr)
+	while(curr->next != nullptr)
 	{
-		if(curr->data == ch)
+		Node * temp = curr->next;
+		if(temp->data == ch)
 		{
-			Node * temp = curr;
-			curr = curr->next;
+			curr->next = temp->next;
 			delete temp;
 			return true;
 		}
+		curr = curr->next;
 	}
 	return false;
 }
