@@ -14,3 +14,23 @@ bool LinkedList::del(char ch)
 	}
 	return false;
 }
+
+Displaying the List: 
+x
+y
+z
+found y
+
+Displaying the List: 
+x
+z
+did not find y
+
+Displaying the List: 
+x
+z
+did not find y
+
+Displaying the List: 
+x
+did not find y
