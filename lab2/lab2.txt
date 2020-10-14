@@ -1,0 +1,16 @@
+bool LinkedList::del(char ch)
+{
+	Node * curr = head;
+	while(curr->next != nullptr)
+	{
+		Node * temp = curr->next;
+		if(temp->data == ch)
+		{
+			curr->next = temp->next;
+			delete temp;
+			return true;
+		}
+		curr = curr->next;
+	}
+	return false;
+}
