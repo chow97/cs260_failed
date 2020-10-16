@@ -57,9 +57,9 @@ bool LinkedList::del(char ch)
 	while(curr != nullptr)
 	{
 		Node * temp = curr;
-		if(temp->data == ch)
+		if(curr->data == ch)
 		{
-			curr->next = temp->next;
+			curr = curr->next;
 			delete temp;
 			return true;
 		}
