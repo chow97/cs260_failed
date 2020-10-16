@@ -54,9 +54,9 @@ bool LinkedList::find(char ch)
 bool LinkedList::del(char ch)
 {
 	Node * curr = head;
-	while(curr->next != nullptr)
+	while(curr != nullptr)
 	{
-		Node * temp = curr->next;
+		Node * temp = curr;
 		if(temp->data == ch)
 		{
 			curr->next = temp->next;
