@@ -93,14 +93,19 @@ bool LinkedList::del(char ch)
 {
 	Node * curr = head;
 	Node * temp = curr;
+	if(head->data == ch)
+	{
+		head = temp->next;
+	}
 	while(temp != nullptr && temp->data != ch)
 	{
 		temp = temp->next;
 	}
-	curr = temp->next;
+	curr->next = temp->next;
 	delete temp;
 	return true;
 }
+
 ostream& operator<< (ostream& out, const LinkedList& list)
 {
 	LinkedList::Node * curr = list.head;
