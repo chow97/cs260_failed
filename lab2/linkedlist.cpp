@@ -17,7 +17,7 @@ LinkedList::~LinkedList()
 		curr = head;
 	}
 }
-
+/*
 void LinkedList::add(char ch)
 {
 	Node * newNode = new Node();
@@ -36,6 +36,26 @@ void LinkedList::add(char ch)
 	}
 	last->next = newNode;
 }
+*/
+void LinkedList::add(char ch)
+{
+	Node * curr = head;
+	Node * newNode = new Node();
+	newNode->data = ch;
+	newNode->next = nullptr;
+	if(head == nullptr)
+	{
+		head = newNode;
+		return;
+	}
+	while(curr->next != nullptr)
+	{
+		curr = curr->next;
+	}
+	curr->next = newNode;
+}
+
+
 
 bool LinkedList::find(char ch)
 {
@@ -51,6 +71,7 @@ bool LinkedList::find(char ch)
 	return false;
 }
 
+/*
 bool LinkedList::del(char ch)
 {
 	Node * curr = head;
@@ -67,7 +88,19 @@ bool LinkedList::del(char ch)
 	}
 	return false;
 }
-
+*/
+bool LinkedList::del(char ch)
+{
+	Node * curr = head;
+	Node * temp = curr;
+	while(temp != nullptr && temp->data != ch)
+	{
+		temp = temp->next;
+	}
+	curr = temp->next;
+	delete temp;
+	return true;
+}
 ostream& operator<< (ostream& out, const LinkedList& list)
 {
 	LinkedList::Node * curr = list.head;
