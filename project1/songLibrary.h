@@ -6,32 +6,47 @@
 #include <fstream>
 
 using namespace std;
+                                            
+class Song {
+    public:
+        Song(char title[], char artist[], char album[], char duration[]);
+        ~Song();
+        void printToConsole() const;
+        void printToFile(ofstream *file) const;
+        bool matchesArtist(char *artistValue) const;
+        bool matchesAlbum(char *albumValue) const;
+    private:
+        char *title;
+        char *artist;
+        char *album;
+        char *duration;
+		
+};
 
-class SongList 
-{
+class SongList {
     public:
         SongList();
         ~SongList();
-        void addSong(char title[], char artist[], char album[], char duration[]);
-        void removeSong();
-        void numViews();
-        void displayAllArtists();
-        void displayAllSongs();
-
+        void insertSong(char title[], char artist[], char album[], char duration[]);
+        void removeSong(int index);
+        void printSongListToConsole();
+        void printSongListToFile(ofstream *file);
+        void searchByArtist(char artist[]);
+        void searchByAlbum(char album[]);
     private:
-        struct Song
-        {
-            char * title;
-            char * artist;
-            char * album;
-            char * duration;
-        }
-        struct Node 
-        {
-            char data;
-            Node * next;
-            Node * prev;
-        };
-        Node * head;
-        Node * tail;
+//        Song *songs[100];
+        int numSongs;
+		struct Node {
+			Song *track;
+			Node *next;
+		};
+		Node *head;
 };
+
+void searchAlbum(SongList * sl);
+void searchArtist(SongList * sl);
+void displayMenu(SongList * sl);
+void loadMusicLibrary(const char fileName[], SongList * sl);
+void removeSongByIndex(SongList * sl);
+void addSong(SongList * sl);
+#endif
