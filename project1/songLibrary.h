@@ -19,6 +19,13 @@ class SongList
         void displayAllSongs();
 
     private:
+        struct Song
+        {
+            char * title;
+            char * artist;
+            char * album;
+            char * duration;
+        }
         struct Node 
         {
             char data;
@@ -26,4 +33,5 @@ class SongList
             Node * prev;
         };
         Node * head;
+        Node * tail;
 };
