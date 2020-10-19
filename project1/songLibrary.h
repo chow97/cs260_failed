@@ -9,17 +9,18 @@ using namespace std;
                                             
 class Song {
     public:
-        Song(char title[], char artist[], char album[], char duration[]);
+        Song(char title[], char artist[], char views[], char likes[], char length[]);
         ~Song();
         void printToConsole() const;
         void printToFile(ofstream *file) const;
         bool matchesArtist(char *artistValue) const;
-        bool matchesAlbum(char *albumValue) const;
+        bool matchesviews(char *viewsValue) const;
     private:
         char *title;
         char *artist;
-        char *album;
-        char *duration;
+        char *views;
+        char *likes;
+        char *length;
 		
 };
 
@@ -27,12 +28,12 @@ class SongList {
     public:
         SongList();
         ~SongList();
-        void insertSong(char title[], char artist[], char album[], char duration[]);
+        void insertSong(char title[], char artist[], char views[], char likes[], char length[]);
         void removeSong(int index);
         void printSongListToConsole();
         void printSongListToFile(ofstream *file);
         void searchByArtist(char artist[]);
-        void searchByAlbum(char album[]);
+        void searchByviews(char views[]);
     private:
 //        Song *songs[100];
         int numSongs;
@@ -43,7 +44,7 @@ class SongList {
 		Node *head;
 };
 
-void searchAlbum(SongList * sl);
+void searchviews(SongList * sl);
 void searchArtist(SongList * sl);
 void displayMenu(SongList * sl);
 void loadMusicLibrary(const char fileName[], SongList * sl);
