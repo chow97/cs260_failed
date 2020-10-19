@@ -188,6 +188,7 @@ void addSong(SongList * sl){
 	char artist[MAX];
 	char length[MAX];
 	char views[MAX];
+    char likes[MAX];
 	cout << "What is the title of the song: ";
 	cin.get(title, MAX, '\n');
 	cin.ignore(MAX, '\n');
@@ -200,7 +201,7 @@ void addSong(SongList * sl){
 	cout << "What is the views name: ";
 	cin.get(views, MAX, '\n');
 	cin.ignore(MAX, '\n');
-	sl->insertSong(title, artist, views, length);
+	sl->insertSong(title, artist, views, likes, length);
 }
 
 void loadMusicLibrary(const char fileName[], SongList * sl){
@@ -209,6 +210,7 @@ void loadMusicLibrary(const char fileName[], SongList * sl){
 	char artist[MAX];
 	char length[MAX];
 	char views[MAX];
+    char likes[MAX];
 
 	in.open(fileName);
 	if(!in)
@@ -230,7 +232,7 @@ void loadMusicLibrary(const char fileName[], SongList * sl){
 		in.get(views, MAX, '\n');
 		in.ignore(MAX, '\n');
 
-		sl->insertSong(title, artist, views, length);
+		sl->insertSong(title, artist, views, likes, length);
 
 		in.get(title, MAX, ';');
 	}
