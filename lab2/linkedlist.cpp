@@ -102,6 +102,7 @@ bool LinkedList::del(char ch)
 		temp = temp->next;
 	}
 	curr->next = temp->next;
+	curr = curr->next;
 	delete temp;
 	return true;
 }
