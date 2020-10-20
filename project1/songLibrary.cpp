@@ -107,7 +107,7 @@ void SongList::searchByArtist(char artist[]){
 		current = current->next;
 	}
 }
-
+/*
 void SongList::searchByviews(char views[]){
 	Node * current = head->next;
 	while(current != nullptr){
@@ -117,20 +117,21 @@ void SongList::searchByviews(char views[]){
 		current = current->next;
 	}
 }
-
+*/
 void searchArtist(SongList * sl){
 	char artistValue[MAX];
 	cout << "Please enter the Artist's name: ";
 	cin.get(artistValue, MAX, '\n');
 	sl->searchByArtist(artistValue);
 }
-
+/*
 void searchviews(SongList * sl){
 	char viewsValue[MAX];
 	cout << "Please enter the views's name: ";
 	cin.get(viewsValue, MAX, '\n');
 	sl->searchByviews(viewsValue);
 }
+*/
 void removeSongByIndex(SongList * sl){
 	int index;
 	cout << "Enter the index of the Song you want to delete: ";
@@ -166,7 +167,7 @@ void displayMenu(SongList * sl)
 			break;
 
 		case '4':
-			searchviews(sl);
+			//searchviews(sl);
 			break;
 	
 		case '5':

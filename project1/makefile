@@ -1,11 +1,11 @@
-output: main.o SongLibrary.o
-	g++ -g main.o SongLibrary.o -o app
+output: main.o songLibrary.o
+	g++ -g main.o songLibrary.o -o app
 
 main.o: main.cpp
 	g++ -c -g main.cpp
 
-SongLibrary.o: SongLibrary.cpp SongLibrary.h
-	g++ -c -g SongLibrary.cpp
+songLibrary.o: songLibrary.cpp songLibrary.h
+	g++ -c -g songLibrary.cpp
 
 run: all
 	app
