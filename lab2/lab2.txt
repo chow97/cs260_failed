@@ -5,13 +5,16 @@ bool LinkedList::del(char ch)
 	if(head->data == ch)
 	{
 		head = temp->next;
+		curr = head;
+		delete temp;
+		return true;
 	}
 	while(temp != nullptr && temp->data != ch)
 	{
+		curr = temp;
 		temp = temp->next;
 	}
 	curr->next = temp->next;
-	curr = curr->next;
 	delete temp;
 	return true;
 }

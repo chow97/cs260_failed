@@ -16,6 +16,8 @@ int main()
 {
 	LinkedList	list;
 
+//	list.add('a');
+//	list.add('b');
 	list.add('x');
 	list.add('y');
 	list.add('z');
@@ -33,6 +35,10 @@ int main()
 	list.del('z');
 	cout << list;
 	find(list, 'y');
+
+//	list.del('b');
+//	cout << list;
+//	find(list, 'y');
 
 	return 0;
 }

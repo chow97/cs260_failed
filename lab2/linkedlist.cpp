@@ -78,9 +78,10 @@ bool LinkedList::del(char ch)
 	while(curr != nullptr)
 	{
 		Node * temp = curr;
-		if(curr->data == ch)
+		if(curr->next->data == ch)
 		{
-			curr = curr->next;
+			temp = curr->next;
+			curr = curr->next->next;
 			delete temp;
 			return true;
 		}
@@ -96,13 +97,16 @@ bool LinkedList::del(char ch)
 	if(head->data == ch)
 	{
 		head = temp->next;
+		curr = head;
+		delete temp;
+		return true;
 	}
 	while(temp != nullptr && temp->data != ch)
 	{
+		curr = temp;
 		temp = temp->next;
 	}
 	curr->next = temp->next;
-	curr = curr->next;
 	delete temp;
 	return true;
 }
