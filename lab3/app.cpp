@@ -16,6 +16,8 @@ int main()
 {
 	LinkedList	list;
 
+	list.add('a');
+	list.add('b');
 	list.add('x');
 	list.add('y');
 	list.add('z');
