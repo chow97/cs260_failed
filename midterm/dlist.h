@@ -21,4 +21,5 @@ void destroy(node * &head); //supplied
 
 /* *****************YOUR TURN! ******************************** */
 /* place your prototype here */
+int countEven(node* head);
 #endif

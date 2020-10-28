@@ -9,6 +9,7 @@ int main()
 
     //PLEASE PUT YOUR CODE HERE to call the function assigned
 
+	countEven(head);
 
     display(head);
     destroy(head);    
