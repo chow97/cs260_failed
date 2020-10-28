@@ -1,0 +1,13 @@
+
+Here is the original list: 2 -> 44 -> 2 -> 17 -> 21 -> 2 -> 43 -> 31 -> 29 -> 29 -> 2
+
+This list contains 11 number of items 
+even: 5
+
+The resulting list is... 2 -> 44 -> 2 -> 17 -> 21 -> 2 -> 43 -> 31 -> 29 -> 29 -> 2
+
+
+Now backwards: 2 -> 29 -> 29 -> 31 -> 43 -> 2 -> 21 -> 17 -> 2 -> 44 -> 2
+
+This list contains 11 number of items 
+The sum of all data is: 222
