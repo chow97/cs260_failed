@@ -10,7 +10,7 @@ int countEven(node * head)
 	}
 	if(head->data % 2 == 0)
 	{
-		return count + 1 +  countEven(head->next);
+		return count + 1 + countEven(head->next);
 	}
-		return countEven(head->next);
+//		return countEven(head->next);
 }
