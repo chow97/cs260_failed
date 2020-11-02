@@ -15,7 +15,7 @@ public:
 	bool find(char ch);
 	bool del(char ch);
 
-	friend ostream& operator<<(std::ostream& out, LinkedList& list);
+	friend ostream& operator<<(ostream& out, LinkedList& list);
 
 private:
 	//fill in your code here
@@ -25,7 +25,7 @@ private:
 		Node * next;
 	};
 	Node * head;
-	bool del(Node * curr, char ch);
+	bool del(Node * head, char ch);
 };
 
 #endif // _LINKED_LIST_

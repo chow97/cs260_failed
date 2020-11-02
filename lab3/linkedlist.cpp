@@ -89,7 +89,6 @@ bool LinkedList::del(char ch)
 	}
 	return false;
 }
-*/
 bool LinkedList::del(char ch)
 {
 	Node * curr = head;
@@ -110,8 +109,25 @@ bool LinkedList::del(char ch)
 	delete temp;
 	return true;
 }
+*/
 
-ostream& operator<< (ostream& out, const LinkedList& list)
+bool LinkedList::del(Node * head, char ch)
+{
+	if(head == nullptr)
+	{
+		return false;
+	}
+	if(head->data == ch)
+	{
+		Node * temp = head;
+		head = head->next;
+		delete temp;
+		return del(head, ch);
+	}
+	return del(head->next, ch);
+}
+
+ostream& operator<< (ostream& out, LinkedList& list)
 {
 	LinkedList::Node * curr = list.head;
 
