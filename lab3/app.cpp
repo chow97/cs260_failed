@@ -24,15 +24,15 @@ int main()
 	cout << list;
 	find(list, 'y');
 
-	list.del('y');
+//	list.del('y');
 	cout << list;
 	find(list, 'y');
 
-	list.del('x');
+//	list.del('x');
 	cout << list;
 	find(list, 'y');
 
-	list.del('z');
+//	list.del('z');
 	cout << list;
 	find(list, 'y');
 

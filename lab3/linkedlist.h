@@ -25,7 +25,8 @@ private:
 		Node * next;
 	};
 	Node * head;
-	bool del(Node * head, char ch);
+	void add(Node *& head, char ch);
+//	bool del(Node * head, char ch);
 };
 
 #endif // _LINKED_LIST_
