@@ -15,24 +15,24 @@ void find(LinkedList& list, char ch)
 int main()
 {
 	LinkedList	list;
-
-	list.add('a');
-	list.add('b');
+//	struct Node * head = NULL;
+//	list.add('a');
+//	list.add('b');
 	list.add('x');
 	list.add('y');
 	list.add('z');
 	cout << list;
 	find(list, 'y');
 
-//	list.del('y');
+	list.del('y');
 	cout << list;
 	find(list, 'y');
 
-//	list.del('x');
+	list.del('x');
 	cout << list;
 	find(list, 'y');
 
-//	list.del('z');
+	list.del('z');
 	cout << list;
 	find(list, 'y');
 

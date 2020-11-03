@@ -11,9 +11,15 @@ public:
 	LinkedList();
 	~LinkedList();
 
-	void add(char ch);
+	void add(char ch)
+	{
+		add(head, ch);
+	}
 	bool find(char ch);
-	bool del(char ch);
+	void del(char ch)
+	{
+		del(head, ch);
+	}
 
 	friend ostream& operator<<(ostream& out, LinkedList& list);
 
@@ -26,7 +32,7 @@ private:
 	};
 	Node * head;
 	void add(Node *& head, char ch);
-//	bool del(Node * head, char ch);
+	bool del(Node * head, char ch);
 };
 
 #endif // _LINKED_LIST_

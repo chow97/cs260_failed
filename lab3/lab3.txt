@@ -1,0 +1,41 @@
+bool LinkedList::del(Node * head, char ch)
+{
+	Node * temp;
+	if(head == nullptr)
+	{
+		return false;
+	}
+	if(head->data == ch)
+	{
+		delete head;
+		return true;
+	}
+	if(head->next->data == ch)
+	{
+		temp = head->next;
+		head->next = temp->next;
+		delete temp;
+		return true;
+	}
+	del(head->next, ch);
+}
+
+Displaying the List: 
+x
+y
+z
+found y
+
+Displaying the List: 
+x
+z
+did not find y
+
+Displaying the List: 
+0
+z
+did not find y
+
+Displaying the List: 
+0
+did not find y

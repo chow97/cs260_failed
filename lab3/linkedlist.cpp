@@ -21,15 +21,15 @@ LinkedList::~LinkedList()
 
 void LinkedList::add(Node *& head, char ch)
 {
-	if(head != nullptr)
+	if(head == nullptr)
 	{
-		add(head->next, ch);
+		head = new Node();
+		head->data = ch;
+		head->next = nullptr;
 	}
 	else
 	{
-		head = new Node;
-		head->data = ch;
-		head->next = nullptr;
+		add(head->next, ch);
 	}
 }
 /*
@@ -106,22 +106,29 @@ bool LinkedList::del(char ch)
 	return true;
 }
 
+*/
 bool LinkedList::del(Node * head, char ch)
 {
+	Node * temp;
 	if(head == nullptr)
 	{
 		return false;
 	}
 	if(head->data == ch)
 	{
-		Node * temp = head;
-		head = head->next;
-		delete temp;
-		return del(head, ch);
+		delete head;
+		return true;
 	}
-	return del(head->next, ch);
+	if(head->next->data == ch)
+	{
+		temp = head->next;
+		head->next = temp->next;
+		delete temp;
+		return true;
+	}
+	del(head->next, ch);
 }
-*/
+
 ostream& operator<< (ostream& out, LinkedList& list)
 {
 	LinkedList::Node * curr = list.head;
