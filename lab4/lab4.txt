@@ -1,0 +1,18 @@
+int LinkedList::_sumR(Node* node)
+{
+	if(node != nullptr)
+	{
+		return node->value + _sumR(node->next);
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+9 items:
+110, 12, 31, 137, 139, 252, 114, 81, 12
+total = 888
+
+sum() =  888
+sumR() = 0

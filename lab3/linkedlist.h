@@ -10,11 +10,12 @@ class LinkedList
 public:
 	LinkedList();
 	~LinkedList();
-
-	void add(char ch)
+	void add(char ch);
+/*
 	{
 		add(head, ch);
 	}
+*/
 	bool find(char ch);
 	void del(char ch)
 	{
@@ -31,7 +32,7 @@ private:
 		Node * next;
 	};
 	Node * head;
-	void add(Node *& head, char ch);
+	//void add(char ch);//Node *& head, char ch);
 	bool del(Node * head, char ch);
 };
 

@@ -19,6 +19,7 @@ LinkedList::~LinkedList()
 }
 
 
+/*
 void LinkedList::add(Node *& head, char ch)
 {
 	if(head == nullptr)
@@ -32,7 +33,7 @@ void LinkedList::add(Node *& head, char ch)
 		add(head->next, ch);
 	}
 }
-/*
+*/
 void LinkedList::add(char ch)
 {
 	Node * curr = head;
@@ -50,7 +51,6 @@ void LinkedList::add(char ch)
 	}
 	curr->next = newNode;
 }
-*/
 
 
 bool LinkedList::find(char ch)
